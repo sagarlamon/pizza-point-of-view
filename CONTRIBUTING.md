@@ -32,17 +32,9 @@ Thank you for your interest in contributing to Flash Pizza! This document provid
 2. Clone your fork:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/flash-pizza.git
-cd flash-pizza
+git clone https://github.com/sagarlamon/pizza-point-of-view.git
+cd pizza-point-of-view
 ```
-
-3. Add upstream remote:
-
-```bash
-git remote add upstream https://github.com/ORIGINAL_OWNER/flash-pizza.git
-```
-
----
 
 ## Development Setup
 
@@ -475,4 +467,4 @@ By contributing, you agree that your contributions will be licensed under the pr
 
 ---
 
-Thank you for contributing to Flash Pizza! 🍕
+Thank you for contributing to pizza-point-of-view! 🍕
