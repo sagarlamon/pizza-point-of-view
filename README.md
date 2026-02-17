@@ -65,16 +65,6 @@
 
 ---
 
-## 🚀 Demo
-
-### Access URLs
-| Panel | URL | Password |
-|-------|-----|----------|
-| Customer | `https://your-domain.com/` | - |
-| Admin | `https://your-domain.com/?admin` | `admin123` |
-
----
-
 ## 📦 Installation
 
 ### Prerequisites
@@ -262,5 +252,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 <p align="center">
-  Made with ❤️ for small restaurants and pizza shops
+  Made by SAGAR with ❤️ for small restaurants and pizza shops
 </p>
