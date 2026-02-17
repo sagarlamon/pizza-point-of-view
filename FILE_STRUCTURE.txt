@@ -1,0 +1,525 @@
+================================================================================
+                    🍕 FLASH PIZZA - FILE STRUCTURE
+================================================================================
+
+flash-pizza/
+│
+├── 📄 index.html
+│   └── Main HTML entry point
+│   └── Contains meta tags for PWA
+│   └── Theme initialization script
+│   └── Links to Leaflet CSS for maps
+│
+├── 📄 package.json
+│   └── Project dependencies
+│   └── Scripts: dev, build, preview
+│
+├── 📄 vite.config.ts
+│   └── Vite build configuration
+│   └── React plugin setup
+│
+├── 📄 tailwind.config.js
+│   └── Tailwind CSS configuration
+│   └── Custom colors, fonts
+│
+├── 📄 tsconfig.json
+│   └── TypeScript configuration
+│
+├── 📄 .env.example
+│   └── Environment variables template
+│   └── Firebase configuration keys
+│
+├── 📄 DOCUMENTATION.md
+│   └── Complete project documentation
+│   └── User guides for customer & admin
+│   └── API reference, deployment guide
+│
+├── 📄 FIREBASE_SETUP_GUIDE.md
+│   └── Step-by-step Firebase setup
+│   └── Free tier information
+│
+├── 📄 FILE_STRUCTURE.txt
+│   └── This file - detailed structure
+│
+└── 📁 src/
+    │
+    ├── 📄 main.tsx
+    │   └── React entry point
+    │   └── Renders App component
+    │   └── No StrictMode (prevents double renders)
+    │
+    ├── 📄 App.tsx
+    │   └── Main customer app component
+    │   └── Navigation between views
+    │   └── Menu filtering & sorting
+    │   └── Banner carousel
+    │   └── Store closed status
+    │   └── Context providers wrapper
+    │   └── [845 lines]
+    │
+    ├── 📄 index.css
+    │   └── Global styles
+    │   └── Tailwind imports
+    │   └── Custom animations
+    │   └── Dark mode variants
+    │   └── Leaflet map overrides
+    │   └── Scrollbar styling
+    │
+    │
+    ├── 📁 admin/
+    │   │
+    │   └── 📄 AdminApp.tsx
+    │       └── Complete admin panel
+    │       └── [1200+ lines]
+    │       │
+    │       ├── 🔐 LoginScreen
+    │       │   └── Password authentication
+    │       │   └── Default: "admin123"
+    │       │
+    │       ├── 📊 OrdersTab
+    │       │   └── New orders with alarm
+    │       │   └── Active orders (preparing, out for delivery)
+    │       │   └── Completed orders
+    │       │   └── Cancelled orders
+    │       │   └── Order status updates
+    │       │   └── Continuous alarm for new orders
+    │       │
+    │       ├── 🍕 MenuTab
+    │       │   └── Add new menu items
+    │       │   └── Edit existing items
+    │       │   └── Delete items
+    │       │   └── Toggle availability
+    │       │   └── Category filter
+    │       │
+    │       ├── 🎟️ CouponsTab
+    │       │   └── Create discount codes
+    │       │   └── Percentage or flat discount
+    │       │   └── Min order, max discount
+    │       │   └── Expiry dates
+    │       │   └── Toggle active status
+    │       │
+    │       ├── 🖼️ BannersTab
+    │       │   └── Add promotional banners
+    │       │   └── Edit banner details
+    │       │   └── Reorder banners
+    │       │   └── Toggle visibility
+    │       │   └── Delete banners
+    │       │
+    │       └── ⚙️ SettingsTab
+    │           └── Store name & phone
+    │           └── UPI ID for payments
+    │           └── Store location (lat/lng)
+    │           └── Delivery radius
+    │           └── Delivery charges
+    │           └── Free delivery threshold
+    │           └── Open/close store
+    │
+    │
+    ├── 📁 components/
+    │   │
+    │   ├── 📄 CartContext.tsx
+    │   │   └── Shopping cart state management
+    │   │   └── Add/remove items
+    │   │   └── Quantity updates
+    │   │   └── Coupon validation (uses DataContext)
+    │   │   └── Delivery charge calculation
+    │   │   └── Total calculation
+    │   │   └── localStorage persistence
+    │   │
+    │   ├── 📄 CategoryFilter.tsx
+    │   │   └── Category tab buttons
+    │   │   └── Categories: All, Veg, Non-Veg, Combos, Drinks
+    │   │   └── Animated selection indicator
+    │   │   └── SVG icons for each category
+    │   │
+    │   ├── 📄 Checkout.tsx
+    │   │   └── Multi-step checkout form
+    │   │   └── Customer info (name, phone, address)
+    │   │   └── Coupon input & validation
+    │   │   └── Location picker integration
+    │   │   └── Payment method selection
+    │   │   └── UPI payment flow
+    │   │   └── Order summary
+    │   │   └── Place order logic
+    │   │   └── [600+ lines]
+    │   │
+    │   ├── 📄 FloatingCart.tsx
+    │   │   └── Floating action button
+    │   │   └── Shows item count
+    │   │   └── Shows total amount
+    │   │   └── Opens checkout
+    │   │
+    │   ├── 📄 Header.tsx
+    │   │   └── App header bar
+    │   │   └── Logo & store name
+    │   │   └── Profile button
+    │   │   └── Notification bell
+    │   │
+    │   ├── 📄 Icons.tsx
+    │   │   └── 50+ SVG icon components
+    │   │   └── Categories: VegIcon, NonVegIcon, CombosIcon, BeverageIcon
+    │   │   └── UI: CartIcon, SearchIcon, FilterIcon, etc.
+    │   │   └── Actions: PlusIcon, MinusIcon, EditIcon, TrashIcon
+    │   │   └── Status: CheckIcon, ClockIcon, TruckIcon
+    │   │   └── Social: PhoneIcon, WhatsAppIcon
+    │   │   └── [500+ lines]
+    │   │
+    │   ├── 📄 LocationPicker.tsx
+    │   │   └── Full-screen map modal
+    │   │   └── Leaflet/OpenStreetMap integration
+    │   │   └── Store location marker
+    │   │   └── Delivery radius circle
+    │   │   └── Draggable customer pin
+    │   │   └── "Use My Location" GPS button
+    │   │   └── Distance calculation
+    │   │   └── Delivery zone validation
+    │   │
+    │   ├── 📄 MenuItem.tsx
+    │   │   └── Menu item list card
+    │   │   └── Image with veg/non-veg badge
+    │   │   └── Name, description, price
+    │   │   └── Star rating display
+    │   │   └── Add to cart button
+    │   │   └── Quantity controls (+/-)
+    │   │
+    │   ├── 📄 NotificationCenter.tsx
+    │   │   └── Full notification list page
+    │   │   └── Order notifications
+    │   │   └── Mark as read
+    │   │   └── Clear all
+    │   │
+    │   ├── 📄 OrderProgress.tsx
+    │   │   └── Order status timeline
+    │   │   └── Modes: compact, full
+    │   │   └── Steps: Order Placed → Preparing → Out for Delivery → Delivered
+    │   │   └── Cancelled order handling
+    │   │   └── Animated progress indicator
+    │   │
+    │   ├── 📄 OrderTracking.tsx
+    │   │   └── Full order tracking page
+    │   │   └── Map with route visualization
+    │   │   └── Store marker, customer marker
+    │   │   └── Delivery rider marker (when out)
+    │   │   └── Order progress timeline
+    │   │   └── Invoice/bill summary
+    │   │   └── Cancelled order view
+    │   │   └── Support contact buttons
+    │   │   └── [500+ lines]
+    │   │
+    │   ├── 📄 ProfilePage.tsx
+    │   │   └── Customer profile page
+    │   │   └── Sections: Profile, Orders, Settings, Help
+    │   │   └── Order history with reorder
+    │   │   └── Theme toggle (light/dark)
+    │   │   └── Call & WhatsApp support
+    │   │   └── Uses storeConfig from DataContext
+    │   │   └── [400+ lines]
+    │   │
+    │   └── 📄 UPIPayment.tsx
+    │       └── UPI payment screen
+    │       └── QR code generation (via API)
+    │       └── UPI deep link button
+    │       └── Manual UPI ID copy
+    │       └── Payment verification
+    │       └── Uses storeConfig.upiId
+    │
+    │
+    ├── 📁 context/
+    │   │
+    │   ├── 📄 DataContext.tsx
+    │   │   └── Central data management
+    │   │   └── Firebase OR localStorage
+    │   │   └── Auto-sync between devices
+    │   │   └── Polling every 2 seconds
+    │   │   └── [400+ lines]
+    │   │   │
+    │   │   ├── State:
+    │   │   │   └── menuItems: MenuItem[]
+    │   │   │   └── orders: Order[]
+    │   │   │   └── coupons: Coupon[]
+    │   │   │   └── storeConfig: StoreConfig
+    │   │   │   └── newOrderIds: string[]
+    │   │   │   └── isFirebaseConnected: boolean
+    │   │   │
+    │   │   ├── Actions:
+    │   │   │   └── addMenuItem()
+    │   │   │   └── updateMenuItem()
+    │   │   │   └── deleteMenuItem()
+    │   │   │   └── addOrder()
+    │   │   │   └── updateOrderStatus()
+    │   │   │   └── addCoupon()
+    │   │   │   └── updateCoupon()
+    │   │   │   └── deleteCoupon()
+    │   │   │   └── validateCoupon()
+    │   │   │   └── updateStoreConfig()
+    │   │   │   └── acknowledgeOrder()
+    │   │   │
+    │   │   └── Persistence:
+    │   │       └── localStorage keys: flashpizza_*
+    │   │       └── Firebase paths: /menu, /orders, /coupons, /config
+    │   │
+    │   ├── 📄 NotificationContext.tsx
+    │   │   └── Toast notifications
+    │   │   └── In-app notifications
+    │   │   └── Order-linked notifications
+    │   │   └── Browser notifications (if permitted)
+    │   │   │
+    │   │   ├── Functions:
+    │   │   │   └── showToast(type, message)
+    │   │   │   └── addNotification(notification)
+    │   │   │   └── setNotificationForOrder(orderId, title, message)
+    │   │   │   └── removeNotificationForOrder(orderId)
+    │   │   │   └── markAsRead(id)
+    │   │   │   └── clearAll()
+    │   │   │
+    │   │   └── Components:
+    │   │       └── ToastContainer (renders toasts)
+    │   │
+    │   └── 📄 ThemeContext.tsx
+    │       └── Light/dark theme management
+    │       └── System preference detection
+    │       └── Manual override
+    │       └── localStorage persistence
+    │       └── Smooth transitions
+    │
+    │
+    ├── 📁 data/
+    │   │
+    │   └── 📄 mockData.ts
+    │       └── Initial menu items (12 items)
+    │       └── Default coupons (WELCOME20, PIZZA50)
+    │       └── Store configuration defaults
+    │       └── Used on first load
+    │
+    │
+    ├── 📁 services/
+    │   │
+    │   └── 📄 firebase.ts
+    │       └── Firebase SDK initialization
+    │       └── Realtime Database connection
+    │       └── CRUD operations for all entities
+    │       └── Real-time listeners
+    │       │
+    │       ├── Functions:
+    │       │   └── initializeFirebase()
+    │       │   └── isFirebaseAvailable()
+    │       │   └── subscribeToOrders()
+    │       │   └── subscribeToMenu()
+    │       │   └── subscribeToCoupons()
+    │       │   └── subscribeToConfig()
+    │       │   └── saveOrder()
+    │       │   └── updateOrder()
+    │       │   └── saveMenuItem()
+    │       │   └── deleteMenuItem()
+    │       │   └── saveCoupon()
+    │       │   └── deleteCoupon()
+    │       │   └── saveConfig()
+    │       │
+    │       └── Paths:
+    │           └── /orders/{orderId}
+    │           └── /menu/{itemId}
+    │           └── /coupons/{couponCode}
+    │           └── /config
+    │
+    │
+    └── 📁 types/
+        │
+        └── 📄 index.ts
+            └── TypeScript type definitions
+            │
+            ├── MenuItem
+            │   └── id, name, description, price
+            │   └── image, category, available, rating
+            │
+            ├── CartItem
+            │   └── extends MenuItem + quantity
+            │
+            ├── Order
+            │   └── id, items, total, status
+            │   └── customer info (name, phone, address, location)
+            │   └── payment (method, status)
+            │   └── coupon, discount, deliveryCharge
+            │   └── createdAt
+            │
+            ├── OrderStatus
+            │   └── 'new' | 'preparing' | 'out-for-delivery' | 'completed' | 'cancelled'
+            │
+            ├── Coupon
+            │   └── code, discountType, discountValue
+            │   └── maxDiscount, minOrderAmount
+            │   └── expiresAt, isActive
+            │
+            ├── Banner
+            │   └── id, imageUrl, title, subtitle
+            │   └── isActive, order
+            │
+            ├── StoreConfig
+            │   └── name, phone, upiId
+            │   └── location (lat, lng)
+            │   └── deliveryRadius, deliveryCharge
+            │   └── minOrderForFreeDelivery
+            │   └── isOpen, banners, offerText
+            │
+            └── Category
+                └── 'all' | 'veg' | 'non-veg' | 'combos' | 'beverages'
+
+
+================================================================================
+                           COMPONENT RELATIONSHIPS
+================================================================================
+
+App.tsx
+├── ThemeProvider (context)
+├── NotificationProvider (context)
+├── DataProvider (context)
+├── CartProvider (context)
+│
+├── Header
+│   ├── Logo
+│   ├── ProfileButton → ProfilePage
+│   └── NotificationBell → NotificationCenter
+│
+├── Banner Carousel (from storeConfig.banners)
+│
+├── Store Closed Banner (when !storeConfig.isOpen)
+│
+├── CategoryFilter
+│   └── Category buttons with icons
+│
+├── Filter Bar
+│   └── Sort dropdown, Rating filter, Diet filter
+│
+├── Menu List
+│   └── MenuItem (for each filtered item)
+│       └── Add to cart, quantity controls
+│
+├── FloatingCart
+│   └── Opens Checkout
+│
+├── Checkout
+│   ├── Cart summary
+│   ├── Coupon input
+│   ├── Customer form
+│   ├── LocationPicker (map modal)
+│   ├── Payment selection
+│   └── UPIPayment (if UPI selected)
+│
+├── OrderTracking
+│   ├── Map with markers
+│   ├── OrderProgress
+│   └── Invoice
+│
+└── ToastContainer (renders toasts)
+
+
+AdminApp.tsx
+├── LoginScreen (password: admin123)
+│
+├── Admin Header
+│   ├── Tabs: Orders, Menu, Coupons, Banners, Settings
+│   ├── Firebase/LocalStorage indicator
+│   └── Logout button
+│
+├── OrdersTab
+│   ├── OrderAlarm (continuous ring for new)
+│   ├── New Orders section
+│   ├── Active Orders section
+│   ├── Completed Orders section
+│   └── Cancelled Orders section
+│
+├── MenuTab
+│   ├── Add Item button
+│   ├── Category filter
+│   ├── Item list with edit/delete
+│   └── Item modal (add/edit form)
+│
+├── CouponsTab
+│   ├── Add Coupon button
+│   ├── Coupon list with edit/delete
+│   └── Coupon modal (add/edit form)
+│
+├── BannersTab
+│   ├── Add Banner button
+│   ├── Banner list with reorder/edit/delete
+│   └── Banner modal (add/edit form)
+│
+└── SettingsTab
+    ├── Store info form
+    ├── Location inputs
+    ├── Delivery settings
+    └── Save button
+
+
+================================================================================
+                              DATA FLOW
+================================================================================
+
+1. CUSTOMER PLACES ORDER:
+   Customer → Checkout.tsx → addOrder() → DataContext → localStorage/Firebase
+                                                            ↓
+   Admin ← OrdersTab ← useData().orders ← DataContext ← polling/subscription
+
+2. ADMIN UPDATES ORDER STATUS:
+   Admin → OrdersTab → updateOrderStatus() → DataContext → localStorage/Firebase
+                                                               ↓
+   Customer ← OrderTracking ← useData().orders ← DataContext ← polling
+
+3. ADMIN UPDATES MENU:
+   Admin → MenuTab → updateMenuItem() → DataContext → localStorage/Firebase
+                                                          ↓
+   Customer ← App.tsx ← useData().menuItems ← DataContext ← polling
+
+4. ADMIN UPDATES SETTINGS:
+   Admin → SettingsTab → updateStoreConfig() → DataContext → localStorage/Firebase
+                                                                 ↓
+   Customer ← CartContext (delivery) ← useData().storeConfig ← DataContext
+   Customer ← ProfilePage (phone) ← useData().storeConfig ← DataContext
+   Customer ← UPIPayment (upiId) ← useData().storeConfig ← DataContext
+
+
+================================================================================
+                            STORAGE KEYS
+================================================================================
+
+localStorage Keys (when Firebase not connected):
+├── flashpizza_menu         → MenuItem[]
+├── flashpizza_orders       → Order[]
+├── flashpizza_coupons      → Coupon[]
+├── flashpizza_config       → StoreConfig
+├── flashpizza_cart         → CartItem[]
+├── flashpizza_theme        → 'light' | 'dark'
+├── flashpizza_customer     → { name, phone }
+└── flashpizza_admin_acknowledged → string[] (acknowledged order IDs)
+
+Firebase Paths (when connected):
+├── /menu/{itemId}          → MenuItem
+├── /orders/{orderId}       → Order
+├── /coupons/{code}         → Coupon
+└── /config                 → StoreConfig
+
+
+================================================================================
+                          DEPLOYMENT CHECKLIST
+================================================================================
+
+□ Set up Firebase project (optional but recommended)
+□ Add environment variables (.env)
+□ Run: npm run build
+□ Upload 'dist' folder to hosting
+□ Configure HTTPS (required for location/PWA)
+□ Test customer flow
+□ Test admin flow
+□ Set real UPI ID in admin settings
+□ Set real phone number in admin settings
+□ Add menu items
+□ Create coupons
+□ Add promotional banners
+□ Test order placement
+□ Test UPI payment
+□ Test order tracking
+□ Change admin password (in AdminApp.tsx line ~45)
+
+
+================================================================================
+                               END
+================================================================================

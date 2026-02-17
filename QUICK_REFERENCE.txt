@@ -1,0 +1,154 @@
+================================================================================
+                    🍕 FLASH PIZZA - QUICK REFERENCE
+================================================================================
+
+URLS
+====
+Customer Panel:  https://your-domain.com/
+Admin Panel:     https://your-domain.com/?admin
+Admin Password:  admin123
+
+
+COMMANDS
+========
+Install:         npm install
+Development:     npm run dev
+Build:           npm run build
+Preview:         npm run preview
+
+
+ADMIN TABS
+==========
+1. Orders    → View/process orders, accept/cancel, status updates
+2. Menu      → Add/edit/delete food items
+3. Coupons   → Create/manage discount codes
+4. Banners   → Add promotional banners
+5. Settings  → Store config, UPI, delivery, open/close
+
+
+ORDER STATUSES
+==============
+new              → Order just placed, alarm rings
+preparing        → Admin accepted, cooking
+out-for-delivery → With delivery person
+completed        → Delivered successfully
+cancelled        → Order cancelled by admin
+
+
+CATEGORIES
+==========
+all       → Show all items
+veg       → Vegetarian items
+non-veg   → Non-vegetarian items
+combos    → Combo meals
+beverages → Drinks
+
+
+COUPON TYPES
+============
+percentage → % off (with max cap)
+flat       → Fixed ₹ off
+
+
+PAYMENT METHODS
+===============
+upi → UPI payment with QR code
+cod → Cash on delivery
+
+
+DELIVERY LOGIC
+==============
+- Max delivery radius: 5 km (configurable)
+- Free delivery: Orders ≥ ₹300 (configurable)
+- Delivery charge: ₹35 for orders < ₹300 (configurable)
+
+
+STORAGE KEYS (localStorage)
+===========================
+flashpizza_menu      → Menu items
+flashpizza_orders    → All orders
+flashpizza_coupons   → Discount coupons
+flashpizza_config    → Store settings
+flashpizza_cart      → Customer cart
+flashpizza_theme     → Light/dark preference
+
+
+FIREBASE PATHS
+==============
+/menu/{id}           → Menu items
+/orders/{id}         → Orders
+/coupons/{code}      → Coupons
+/config              → Store config
+
+
+ENVIRONMENT VARIABLES
+=====================
+VITE_FIREBASE_API_KEY
+VITE_FIREBASE_AUTH_DOMAIN
+VITE_FIREBASE_PROJECT_ID
+VITE_FIREBASE_STORAGE_BUCKET
+VITE_FIREBASE_MESSAGING_SENDER_ID
+VITE_FIREBASE_DATABASE_URL
+
+
+KEY FILES
+=========
+src/App.tsx                    → Customer app (main)
+src/admin/AdminApp.tsx         → Admin panel
+src/context/DataContext.tsx    → Data management
+src/context/CartContext.tsx    → Shopping cart
+src/components/Checkout.tsx    → Checkout flow
+src/components/OrderTracking.tsx → Order tracking
+src/services/firebase.ts       → Firebase integration
+
+
+THEME
+=====
+Default: Light mode
+Toggle:  Profile → Settings → Theme
+Storage: flashpizza_theme
+
+
+NOTIFICATIONS
+=============
+New order:  Continuous alarm until admin acts
+Toast:      Success/error messages (3 seconds)
+
+
+TO CHANGE ADMIN PASSWORD
+========================
+Edit: src/admin/AdminApp.tsx
+Line: ~45
+Find: if (password === 'admin123')
+Change 'admin123' to your password
+
+
+TO ADD NEW MENU CATEGORY
+========================
+1. Edit: src/types/index.ts
+   Add to Category type
+
+2. Edit: src/components/CategoryFilter.tsx
+   Add new tab button
+
+3. Edit: src/admin/AdminApp.tsx
+   Add option to category select
+
+
+TROUBLESHOOTING
+===============
+Data not syncing    → Set up Firebase
+UPI not updating    → Check storeConfig.upiId
+Location error      → Enable HTTPS
+No alarm sound      → Click anywhere on page first
+Theme stuck         → Clear localStorage
+
+
+RESET ALL DATA
+==============
+Open browser console:
+> localStorage.clear()
+> location.reload()
+
+
+================================================================================
