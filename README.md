@@ -75,8 +75,8 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/flash-pizza.git
-cd flash-pizza
+git clone https://github.com/sagarlamon/pizza-point-of-view.git
+cd pizza-point-of-view
 
 # Install dependencies
 npm install
